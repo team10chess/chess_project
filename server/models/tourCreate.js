@@ -2,9 +2,12 @@
 const mongoose = require('mongoose');
 
 const tourCreateSchema = new mongoose.Schema({
-    tourId : {type: String, required:'Firstname is required'},
-    format : {type: String, required:'Lastname is required'},
-    num : {type: String, required:'ID is required'},
+    tourId : {type: String, required:true},
+    format : {type: String, required:true},
+    num_of_players : {type: Number, required:true},
+    orgId : {type: String, required:true, ref:createSchema},
+    createdOn:{type: Date, default:Date.now},
+
 })
 
 // mongoose.model('create', Create)
